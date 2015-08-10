@@ -14,7 +14,11 @@ import jxl.Sheet;
 import jxl.Workbook;
 import jxl.read.biff.BiffException;
 
-public class ReadFileXLS {
+import graph.database.Reader;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+
+public class ReadFileXLS extends Reader{
     public void ReadFileXLS(String path) throws IOException  {
         File inputWorkbook = new File(path);
         Workbook w;
@@ -38,6 +42,15 @@ public class ReadFileXLS {
             }
         } catch (BiffException e) {
             e.printStackTrace();
+        }
+    }
+
+    @Override
+    public void readFile(String pathFile) {
+        try {
+            ReadFileXLS(pathFile);
+        } catch (IOException ex) {
+            Logger.getLogger(ReadFileXLS.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
 }
