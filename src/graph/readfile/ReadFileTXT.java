@@ -10,13 +10,16 @@ import java.io.BufferedReader;
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.io.InputStreamReader;
+import graph.database.Reader;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 /**
  *
  * @author dwiharyanto
  */
 
-public class ReadFileTXT {
+public class ReadFileTXT extends Reader{
 
     /**
      * @param path
@@ -37,6 +40,15 @@ public class ReadFileTXT {
             br.close();
             return splitOut;
         } 
+
+    @Override
+    public void readFile(String pathFile) {
+        try {
+            GetDataFromFile(pathFile);
+        } catch (IOException ex) {
+            Logger.getLogger(ReadFileTXT.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }
 }
     
     
