@@ -4,17 +4,21 @@
  */
 package graph.database;
 
+import java.util.ArrayList;
+import java.util.Collections;
+
 /**
  *
  * @author Isjhar-pc
  */
 public class Test {
-    public static void main(String[] args){
+
+    public static void main(String[] args) {
         Node node = new Node();
         node.addProperty("nama", new Property("makan", DataType.String));
         
         
         node.getProperties().put("test", new Property("minum", DataType.String));
-       
+        
     }
 }
